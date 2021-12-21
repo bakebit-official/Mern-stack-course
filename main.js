@@ -1,25 +1,63 @@
-/* DOM */
-/* EVENT HANDLING */
-      let a = "Hello";
-      let b = "World";
-    //   alert(a + " " + b);
+
+const inputIdName = "inp"
+const btnId = "addBtn"
 
 
-// document.getElementsByTagName("h1")[0].innerHTML = "AMI VAT KHAI"
 
-// document.getElementsByTagName("h1")[1].innerHTML = "AMI VAT KHAI"
 
-// document.getElementsByTagName("h1")[2].innerHTML="AMI VAT KHAI"
+const getInput = () => {
+    const inputValue = document.getElementById(inputIdName).value;
+
+
+    let node = document.createElement("li");
    
-    // document.getElementById("red").innerHTML = "Hello World!";
-   
-// console.log(document.getElementsByClassName("btn"))
+    let textnode = document.createTextNode(inputValue);
+    node.appendChild(textnode);
+    
+    document.getElementById("myList").appendChild(node);
     
 
-// document.getElementsByClassName("btn")[0].innerHTML = "Hello World!";
-      
-// document.getElementsByClassName("btn")[1].innerHTML = "Hello World!";
+}
 
-// document.getElementsByClassName("btn")[2].innerHTML = "Hello World!";
+const clickBtn = document.getElementById(btnId).addEventListener("click",getInput)
 
-// document.getElementsByClassName("btn")[3].innerHTML = "Hello World!";
+// PURE FUNCTION
+// const isConfirmed = () => {
+//   const c = confirm("Are you sure?")
+//     console.log(c);
+//     if (c === true) {
+//         console.log("Clicked done")
+//     }
+//     if (c === false) {
+//         console.log("Clicked failed")
+//     }
+// }
+
+
+
+// const getBtn = document.getElementById("btn");
+
+// const btnClicked = getBtn.addEventListener("click",isConfirmed);
+
+
+// document.getElementById("btn").addEventListener("click",() => {
+//     const c = confirm("Are you sure?")
+//     console.log(c);
+//     if (c === true) {
+//         console.log("Clicked done")
+//     }
+//     if (c === false) {
+//         console.log("Clicked failed")
+//     } 
+// });
+
+// const clickMe = ()=>{
+//     const c = confirm("Are you sure?")
+//     console.log(c);
+//     if (c === true) {
+//         console.log("Clicked done")
+//     }
+//     if (c === false) {
+//         console.log("Clicked failed")
+//     }
+// }
