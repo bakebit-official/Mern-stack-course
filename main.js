@@ -1,116 +1,105 @@
 
-//Creating Element
-// let myPara = document.createElement("p");
-// let link = document.createElement("a");
-// link.setAttribute('href', "http://google.com");
-// const linkText = document.createTextNode("See More");
-
-// link.append(linkText)
-
-// const mynode = document.createTextNode("Comilla is beautiful <br>");
-
-// const mynode2 = document.createTextNode("I love icecream <br>");
-
-// const mynode3 = document.createTextNode("fafdadsf ");
-
-// myPara.appendChild(mynode)
-// myPara.appendChild(mynode2)
-// myPara.appendChild(mynode3)
-// const element = document.getElementById("testId");
-// element.appendChild(myPara);
-// element.appendChild(link)
+const country = "Bangla desh desh desh"
+// undefined
+// null
 
 
+const language = ['Bangla', 'English', 'Hindi', 'Jarman', 'Japanese',];
 
-let comment = ""
-let email = ""
+ let withA = language.map((list) => {
+  if (list.includes('a')) {
+        return list
+  } else {
+    return null
+  }
+})
 
+let withoutA = language.map((list) => {
+  if (!list.includes('a')) {
+       return list
+  }else {
+    return null
+  }
+})
+ 
+const a = 21; // integer
 
-const handleComment = (e) =>comment= e
-const handleEmail = (e) => email=e
-
-const getInput = () => {
-  
-    const date = new Date();
-    console.log(comment)
-    console.log(email)
-    let datetime =  date.getDate() + "/"
-                + (date.getMonth()+1)  + "/" 
-                + date.getFullYear() + " @ "  
-                + date.getHours() + ":"  
-                + date.getMinutes() + ":" 
-        + date.getSeconds();
-    
-    let div = document.createElement("div");
-    div.setAttribute("class", "list-item");
-
-    const listHtml = `
-              <p>       
-                <span>${datetime}#</span>
-                ${comment}
-              </p>
-              <div class="list-btn-group">
-                <a href="" target="_blank">See More</a>
-                <span>${email}</span>
-              </div>
-    `;
-
-    div.innerHTML = listHtml;
-
-    document.getElementById("notes-list").appendChild(div);
-    
-    document.getElementById("comment").value = ""
-    document.getElementById("email").value =""
-
-    // let node = document.createElement("li");
-   
-    // let textnode = document.createTextNode(inputValue);
-    // node.appendChild(textnode);
-
-    // document.getElementById("myList").appendChild(node);
-    
-
+if (a !== 20) {
+  console.log('a is true')
 }
 
-const clickBtn = document.getElementById("addBtn").addEventListener("click",getInput)
+// console.log('withA = ', withA)
+// console.log('withoutA = ', withoutA)
+// console.log("========================")
 
-// PURE FUNCTION
-// const isConfirmed = () => {
-//   const c = confirm("Are you sure?")
-//     console.log(c);
-//     if (c === true) {
-//         console.log("Clicked done")
+// withA = withA.filter((item) => {
+  
+//   if (item !== "null") {
+//     return item
+//   }
+// })
+// console.log('withA = ', withA)
+
+// different type of property
+// list of objects
+// object of objects
+
+// const myObj = {
+//   student_Name: 'ERA',
+//   student_Gender: 'Female',
+//   age: 20,
+//   is_active: true,
+//   makeActive: (isActive, name) => {
+    
+//     if (isActive === true) {
+//        console.log(`YES! ${name} is Active`)
 //     }
-//     if (c === false) {
-//         console.log("Clicked failed")
+//     if (isActive === false) {
+//        console.log(`NO! ${name} is not Active`)
 //     }
+   
+//   }
+
 // }
+// myObj.makeActive(false,myObj.student_Name)
+// console.log(myObj)
 
-
-
-// const getBtn = document.getElementById("btn");
-
-// const btnClicked = getBtn.addEventListener("click",isConfirmed);
-
-
-// document.getElementById("btn").addEventListener("click",() => {
-//     const c = confirm("Are you sure?")
-//     console.log(c);
-//     if (c === true) {
-//         console.log("Clicked done")
-//     }
-//     if (c === false) {
-//         console.log("Clicked failed")
-//     } 
-// });
-
-// const clickMe = ()=>{
-//     const c = confirm("Are you sure?")
-//     console.log(c);
-//     if (c === true) {
-//         console.log("Clicked done")
-//     }
-//     if (c === false) {
-//         console.log("Clicked failed")
-//     }
-// }
+ const marks = {
+    c_programming: {
+      mark: 80,
+      gpa:"A+"
+    },
+    history: {
+      mark: 60,
+      gpa:"A"
+    }
+  } 
+ const products = [
+    {
+    product_title: "Cloths",
+    product_price: 200,
+    product_variants: {
+        color: "black",
+        size: "L",
+        quality:null
+      }
+    },
+    {
+    product_title: "books",
+    product_price: 300,
+      product_variants: {
+      color:null,
+      size:null,
+      quality:"good"
+    }
+    },
+    {
+    product_title: "Foods",
+    product_price: 400,
+     product_variants: {
+      color:null,
+      size:null,
+      quality:"good"
+    }
+    }
+  ]
