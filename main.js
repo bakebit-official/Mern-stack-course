@@ -1,105 +1,59 @@
+/* 
+children
+childNodes
+parentNode
+parentElement
+childElementCount
+nextsibling
+firstChild
+lastChild
+lastElementChild
+*/
 
-const country = "Bangla desh desh desh"
-// undefined
-// null
+let i = 1;
 
+const countUp = () => {
+  counterNumber.innerText = i;
+  i = i + 1;
+};
 
-const language = ['Bangla', 'English', 'Hindi', 'Jarman', 'Japanese',];
+const countDown = () => {
+  counterNumber.innerText = i;
+  i = i - 1;
+};
 
- let withA = language.map((list) => {
-  if (list.includes('a')) {
-        return list
-  } else {
-    return null
-  }
-})
+const counter = document.querySelector("#counter");
 
-let withoutA = language.map((list) => {
-  if (!list.includes('a')) {
-       return list
-  }else {
-    return null
-  }
-})
- 
-const a = 21; // integer
+let plusBtn = counter.firstElementChild;
+console.log(plusBtn);
+plusBtn.style.backgroundColor = "blue";
+plusBtn.style.color = "#fff";
+plusBtn.style.margin = "10px";
+plusBtn.style.fontSize = "20px";
+plusBtn.style.padding = "10px";
+plusBtn.style.cursor = "pointer";
 
-if (a !== 20) {
-  console.log('a is true')
-}
+let minusBtn = counter.lastElementChild;
+console.log(minusBtn);
+minusBtn.style.backgroundColor = "red";
+minusBtn.style.color = "#fff";
+minusBtn.style.margin = "10px";
+minusBtn.style.fontSize = "20px";
+minusBtn.style.padding = "10px";
+minusBtn.style.cursor = "pointer";
 
-// console.log('withA = ', withA)
-// console.log('withoutA = ', withoutA)
-// console.log("========================")
+const counterNumber = plusBtn.nextElementSibling;
 
-// withA = withA.filter((item) => {
-  
-//   if (item !== "null") {
-//     return item
-//   }
-// })
-// console.log('withA = ', withA)
+plusBtn.addEventListener("click", countUp);
+minusBtn.addEventListener("click", countDown);
 
-// different type of property
-// list of objects
-// object of objects
-
-// const myObj = {
-//   student_Name: 'ERA',
-//   student_Gender: 'Female',
-//   age: 20,
-//   is_active: true,
-//   makeActive: (isActive, name) => {
-    
-//     if (isActive === true) {
-//        console.log(`YES! ${name} is Active`)
-//     }
-//     if (isActive === false) {
-//        console.log(`NO! ${name} is not Active`)
-//     }
-   
-//   }
-
-// }
-// myObj.makeActive(false,myObj.student_Name)
-// console.log(myObj)
-
- const marks = {
-    c_programming: {
-      mark: 80,
-      gpa:"A+"
-    },
-    history: {
-      mark: 60,
-      gpa:"A"
-    }
-  } 
- const products = [
-    {
-    product_title: "Cloths",
-    product_price: 200,
-    product_variants: {
-        color: "black",
-        size: "L",
-        quality:null
-      }
-    },
-    {
-    product_title: "books",
-    product_price: 300,
-      product_variants: {
-      color:null,
-      size:null,
-      quality:"good"
-    }
-    },
-    {
-    product_title: "Foods",
-    product_price: 400,
-     product_variants: {
-      color:null,
-      size:null,
-      quality:"good"
-    }
-    }
-  ]
+// const count = () => {
+//   const counterDiv = document.querySelector("#counter");
+//   console.log(counterDiv.firstElementChild);
+// const getH1 = counterDiv.children;
+// const getSpan = getH1[0].children;
+// getSpan[0].innerText = i;
+// console.log(getSpan);
+// getSpan[0].innerText = i;
+// i += 1;
+// };
