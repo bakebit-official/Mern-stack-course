@@ -1,59 +1,37 @@
-/* 
-children
-childNodes
-parentNode
-parentElement
-childElementCount
-nextsibling
-firstChild
-lastChild
-lastElementChild
-*/
+/* JSON = Javascript Object Notation */
 
-let i = 1;
+/* JS OBJECT */
 
-const countUp = () => {
-  counterNumber.innerText = i;
-  i = i + 1;
+const products = {
+  product_category: "mobile",
+  category_id: "1221321",
+  product_items: [
+    {
+      product_title: "Samsung Galaxy",
+      price: 20000,
+      color: ["blue", "black"],
+      product_id: "2323432",
+    },
+    {
+      product_title: "I phone",
+      price: 80000,
+      color: ["blue", "black"],
+      product_id: "34324",
+    },
+    {
+      product_title: "MI Note 8",
+      price: 22000,
+      color: ["blue", "black", "white"],
+      product_id: "6345453",
+    },
+    {
+      product_title: "POCO",
+      price: 25000,
+      color: ["blue", "black", "red"],
+      product_id: "423432",
+    },
+  ],
 };
 
-const countDown = () => {
-  counterNumber.innerText = i;
-  i = i - 1;
-};
-
-const counter = document.querySelector("#counter");
-
-let plusBtn = counter.firstElementChild;
-console.log(plusBtn);
-plusBtn.style.backgroundColor = "blue";
-plusBtn.style.color = "#fff";
-plusBtn.style.margin = "10px";
-plusBtn.style.fontSize = "20px";
-plusBtn.style.padding = "10px";
-plusBtn.style.cursor = "pointer";
-
-let minusBtn = counter.lastElementChild;
-console.log(minusBtn);
-minusBtn.style.backgroundColor = "red";
-minusBtn.style.color = "#fff";
-minusBtn.style.margin = "10px";
-minusBtn.style.fontSize = "20px";
-minusBtn.style.padding = "10px";
-minusBtn.style.cursor = "pointer";
-
-const counterNumber = plusBtn.nextElementSibling;
-
-plusBtn.addEventListener("click", countUp);
-minusBtn.addEventListener("click", countDown);
-
-// const count = () => {
-//   const counterDiv = document.querySelector("#counter");
-//   console.log(counterDiv.firstElementChild);
-// const getH1 = counterDiv.children;
-// const getSpan = getH1[0].children;
-// getSpan[0].innerText = i;
-// console.log(getSpan);
-// getSpan[0].innerText = i;
-// i += 1;
-// };
+const productToJson = JSON.stringify(products);
+console.log(productToJson);
