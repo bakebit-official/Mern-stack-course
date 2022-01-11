@@ -1,5 +1,10 @@
 /* JSON = Javascript Object Notation */
-
+/* 
+JSON must not have any function,
+JSON must start with {}
+JSON properties and value will be enclose by ""
+JSON can have string, float, integer, array, object, boolean
+*/
 /* JS OBJECT */
 
 const products = {
@@ -33,5 +38,11 @@ const products = {
   ],
 };
 
-const productToJson = JSON.stringify(products);
-console.log(productToJson);
+// console.log(products.product_items);
+
+//JS Object to JSON
+// const productToJson = JSON.stringify(products);
+// console.log(productToJson);
+
+//JSON to JS Object
+// console.log("json to object = ", JSON.parse(productToJson));
