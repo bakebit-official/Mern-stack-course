@@ -8,6 +8,8 @@ nav {
   background-color: blue;
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  width: 100%;
 }
 .logo img {
   height: 60px;
@@ -120,4 +122,9 @@ nav {
   margin: 10px 0px;
   background-color: rgb(151, 145, 145);
   padding: 10px 0px;
+}
+
+.warning {
+  background-color: orange;
+  padding: 10px;
 }
