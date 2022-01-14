@@ -106,24 +106,70 @@ if (productItems.length > 0) {
 }
 
 /* Add to cart function */
-let cartItems = [];
 
 const showCartValue = (itemsAmount) => {
   document.getElementById("cart_value").innerText = itemsAmount;
 };
+const removeCartItem = (el) => {
+  el.parentNode.remove();
+};
 
+const cartItem = (item) => {
+  const cartItemHtml = ` <li>
+                  <span> ${item.product_title} </span>
+                  <span> (${item.price} X ${item.amount}) </span>
+                  <span> = </span>
+                  <span> ${
+                    Number(item.price) * Number(item.amount)
+                  } taka </span>
+                  <button class="danger-btn" onclick="removeCartItem(this)">X</button>
+                </li>`;
+  return cartItemHtml;
+};
+
+const getTotal = (item) => {
+  return Number(item.price) * Number(item.amount);
+};
+
+/* show cart items */
+const showCartItems = (data) => {
+  let cartListUl = document.getElementById("cartlist");
+  cartListUl.innerHTML = "";
+  let total = 0;
+  data.map((item) => {
+    const cartItemHtml = cartItem(item);
+    total += getTotal(item);
+    document.getElementById("totalPrice").innerText = total;
+    cartListUl.innerHTML += cartItemHtml;
+  });
+};
+
+let cartItems = [];
 const addToCart = (itemId) => {
   const cartData = productItems.find((item) => {
     if (itemId == item.product_id) {
-      // console.log("find = ", item);
       return item;
     }
   });
-  // console.log("cart data = ", cartData);
-  cartItems.push(cartData);
-  console.log(cartItems);
+
+  let checkDuplicate = false;
+  for (item of cartItems) {
+    if (item.product_id == cartData.product_id) {
+      checkDuplicate = true;
+    }
+  }
+
+  if (checkDuplicate) {
+    console.log("====== Duplicate found ========");
+    cartData.amount += 1;
+  } else {
+    console.log("====== Duplicate not found ========");
+    cartData.amount = 1;
+    cartItems.push(cartData);
+  }
 
   if (cartItems.length > 0) {
     showCartValue(cartItems.length);
+    showCartItems(cartItems);
   }
 };

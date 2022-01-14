@@ -59,7 +59,7 @@ nav {
   justify-content: space-between;
 }
 .best-products {
-  width: 75%;
+  width: 55%;
   background-color: cornflowerblue;
   border-radius: 10px;
   box-shadow: -3px 9px 10px 3px #888888;
@@ -101,7 +101,7 @@ nav {
   cursor: pointer;
 }
 .sidebar {
-  width: 23%;
+  width: 40%;
   background-color: cornflowerblue;
   border-radius: 10px;
   box-shadow: -3px 9px 10px 3px #888888;
@@ -127,4 +127,13 @@ nav {
 .warning {
   background-color: orange;
   padding: 10px;
+}
+
+.items-list ul li {
+  margin: 10px 0px;
+  list-style: none;
+  border: 1px dotted rgb(14, 12, 12);
+}
+.danger-btn {
+  background-color: red;
 }
